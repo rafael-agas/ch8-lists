@@ -7,9 +7,9 @@ my_breakfast <- c("nothing")
 my_lunch <- c("dumplings", "chips", "mango juice")
 
 # Create a list `meals` that has contains your breakfast and lunch
-meals <- list(my_breakfast, my_lunch)
+meals <- list(breakfsadt = my_breakfast, lunch = my_lunch)
 
-# Add a "dinner" element to your `meals` list that has what you plan to eat 
+# Add a "dinner" element to your `meals` list that has what you plan to eat
 # for dinner
 
 meals$dinner <- c("rice", "fried steak", "pork belly")
@@ -23,7 +23,7 @@ meals[[5]] <- meals[[2]]
 
 # Use single-bracket notation to extract your breakfast and lunch from your list
 # and save them to a list called `early_meals`
-early_meals <- list(meals[1:2])
+early_Meals <- list(meals[1:2])
 
 
 ### Challenge ###
@@ -35,12 +35,9 @@ lapply(meals, length)
 # Write a function `add_pizza` that adds pizza to a given meal vector, and
 # returns the pizza-fied vector
 add_pizza <- function(food) {
-  food[length(food) + 1] <- "pizza"
-  pizzafied <- food
-  return(pizzafied)
-  
+  food <- c(food, "pizza")
+  food
 }
 
 # Create a vector `better_meals` that is all your meals, but with pizza!
-better_meals <- add_pizza(meals$dinner)
-}
+better_meals <-lapply(meals, add_pizza)
